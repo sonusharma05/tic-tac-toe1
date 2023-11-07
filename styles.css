@@ -1,0 +1,62 @@
+body
+{
+    background-color: black;
+    font-family: Ubuntu;
+}
+
+.heading
+{
+    font-family: 'Press Start 2P';
+    font-size: 300%;
+    color: rgb(229, 255, 0);
+    text-align: center;
+}
+
+.center-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board
+{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+.cell
+{
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    cursor: pointer;
+}
+
+.cell:hover
+{
+    background-color: #ddd;
+}
+
+#ending-message,
+#instruction
+{
+    font-family: 'Press Start 2P';
+    font-size: 2rem;;
+    padding-top: 15%;
+    text-align: center;
+    color: yellow;
+}
+
+#instruction
+{
+    font-size: 1rem;
+}
