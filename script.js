@@ -6,15 +6,6 @@ var board = [
 
 var placesCovered = 0;
 
-function printEndingMessage (endingMessageContent)
-{
-    let endingMessage = document.getElementById("ending-message");
-
-    alert (endingMessage.innerHTML);
-
-    endingMessage.innerHTML = endingMessageContent;
-}
-
 function checkWinner (board)
 {
     // alert ('checking ... ');
@@ -48,7 +39,11 @@ function checkWinner (board)
 
     if (placesCovered == 9)
     {
-        //printEndingMessage ("Game draw!");
+        let endingMessage = document.getElementById("ending-message");
+        endingMessage.innerHTML = "Game Draw";
+
+        let instruction = document.getElementById("instruction");
+        instruction.innerHTML = "Reload to restart";
     }
 
     // No winner

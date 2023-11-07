@@ -2,6 +2,11 @@ body
 {
     background-color: black;
     font-family: Ubuntu;
+
+    margin: 0;
+    padding: 0;
+
+    height: 20%;
 }
 
 .heading
@@ -17,6 +22,12 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+
+    height: 40%;
+
+    display: flex;
+    justify-content: center; /* Align text horizontally to center */
+    align-items: center; /* Align text vertically to center */
 }
 
 .board
@@ -54,9 +65,18 @@ body
     padding-top: 15%;
     text-align: center;
     color: yellow;
+
+    height: 20%;
+
+    display: flex;
+    justify-content: center; /* Align text horizontally to center */
+    align-items: center; /* Align text vertically to center */
+
 }
 
 #instruction
 {
     font-size: 1rem;
+
+    height: 10%;
 }
