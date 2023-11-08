@@ -5,9 +5,33 @@ var board = [
 ];
 
 var placesCovered = 0;
+var isGameAlive = true;
+
+function addReloadButton()
+{
+    // Create an img element for the picture and set its source
+    var imgElement = document.createElement("img");
+    imgElement.src = "images/reset-button.png"; // Replace with the actual path to your image file
+    imgElement.id = "reload-button";
+
+    var targetElement = document.getElementById("bottom-content"); // Replace "target" with the id of the element you want to append the button to
+
+    // Append the button to the target element
+    targetElement.appendChild(imgElement);
+
+    // Add event listener to the button to reload the page when clicked
+    imgElement.addEventListener("click", function() {
+        location.reload();
+    });
+}
 
 function checkWinner (board)
 {
+    if (isGameAlive == false)
+    {
+        return 0;
+    }
+    
     // alert ('checking ... ');
     // Check rows
     for (let i = 0; i < 3; i++)
@@ -42,8 +66,7 @@ function checkWinner (board)
         let endingMessage = document.getElementById("ending-message");
         endingMessage.innerHTML = "Game Draw";
 
-        let instruction = document.getElementById("instruction");
-        instruction.innerHTML = "Reload to restart";
+        addReloadButton();
     }
 
     // No winner
@@ -55,8 +78,6 @@ document.addEventListener ("DOMContentLoaded", function()
 {
     var cells = document.querySelectorAll(".cell");
     var lastMove = "O"; // Initial last move, can be "X" or "O"
-
-    var isGameAlive = true;
 
     cells.forEach(function(cell) {
         if (isGameAlive == true)
@@ -89,9 +110,8 @@ document.addEventListener ("DOMContentLoaded", function()
                         isGameAlive = false;
                         let endingMessage = document.getElementById("ending-message");
                         endingMessage.innerHTML = "Player #" + String (winner) + " has won!";
-                        
-                        let instruction = document.getElementById("instruction");
-                        instruction.innerHTML = "Reload to restart";
+
+                        addReloadButton();
                     }
                 }
             });
